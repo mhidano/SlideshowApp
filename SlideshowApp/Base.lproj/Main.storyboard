@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,11 +13,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SlideshowApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qG1-ts-jkT">
-                                <rect key="frame" x="94" y="94" width="240" height="128"/>
+                                <rect key="frame" x="75" y="94" width="240" height="128"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="637-Su-ssG"/>
@@ -35,14 +35,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4D-OC-OTz">
-                                <rect key="frame" x="367" y="311" width="31" height="30"/>
+                                <rect key="frame" x="329" y="311" width="31" height="30"/>
                                 <state key="normal" title="進む"/>
                                 <connections>
                                     <action selector="onNext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gOV-Ue-k7X"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="axM-XH-8XO">
-                                <rect key="frame" x="198.66666666666666" y="311" width="31" height="30"/>
+                                <rect key="frame" x="179.66666666666666" y="311" width="31" height="30"/>
                                 <state key="normal" title="再生"/>
                                 <connections>
                                     <action selector="onSlideShow:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hAl-jK-YLf"/>
@@ -73,27 +73,28 @@
                 <tapGestureRecognizer id="OBc-uv-SBU">
                     <connections>
                         <action selector="tapImageView:" destination="BYZ-38-t0r" id="w2a-Kx-mxd"/>
-                        <segue destination="EiX-mU-be3" kind="show" id="lHm-gg-93u"/>
+                        <segue destination="EiX-mU-be3" kind="show" identifier="toNext" id="lHm-gg-93u"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="93.75"/>
+            <point key="canvasLocation" x="18.399999999999999" y="93.103448275862078"/>
         </scene>
         <!--Zoom View Controller-->
         <scene sceneID="PwQ-0I-EyA">
             <objects>
                 <viewController id="EiX-mU-be3" customClass="ZoomViewController" customModule="SlideshowApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0BH-rF-xsT">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kJE-8p-ixt">
-                                <rect key="frame" x="94" y="43" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kJE-8p-ixt">
+                                <rect key="frame" x="40" y="50" width="310" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="Wtw-9y-TuZ"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="46u-G1-Y3l">
-                                <rect key="frame" x="199" y="241" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="46u-G1-Y3l">
+                                <rect key="frame" x="179.66666666666666" y="275" width="31" height="30"/>
                                 <state key="normal" title="戻る"/>
                                 <connections>
                                     <segue destination="sZn-0i-MEf" kind="unwind" unwindAction="unwind:" id="h9G-PY-9nb"/>
@@ -102,13 +103,24 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2XJ-xu-pGj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2XJ-xu-pGj" firstAttribute="trailing" secondItem="kJE-8p-ixt" secondAttribute="trailing" constant="40" id="2Re-3Q-F10"/>
+                            <constraint firstItem="kJE-8p-ixt" firstAttribute="centerX" secondItem="0BH-rF-xsT" secondAttribute="centerX" id="AlR-F5-T4C"/>
+                            <constraint firstItem="46u-G1-Y3l" firstAttribute="centerX" secondItem="0BH-rF-xsT" secondAttribute="centerX" id="GE1-Ye-gQS"/>
+                            <constraint firstItem="46u-G1-Y3l" firstAttribute="top" secondItem="kJE-8p-ixt" secondAttribute="top" constant="225" id="gQ1-w6-7aR"/>
+                            <constraint firstItem="kJE-8p-ixt" firstAttribute="top" secondItem="2XJ-xu-pGj" secondAttribute="top" constant="50" id="pR4-wH-ZBT"/>
+                            <constraint firstItem="kJE-8p-ixt" firstAttribute="leading" secondItem="2XJ-xu-pGj" secondAttribute="leading" constant="40" id="wVc-VN-VZ6"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hrE-wr-Jyy"/>
+                    <connections>
+                        <outlet property="zoomImageView" destination="kJE-8p-ixt" id="RK5-3b-7e2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k0L-8Q-2AM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="sZn-0i-MEf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="750" y="93"/>
+            <point key="canvasLocation" x="750" y="92.656587473002162"/>
         </scene>
     </scenes>
     <resources>

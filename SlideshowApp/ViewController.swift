@@ -72,7 +72,7 @@ class ViewController: UIViewController {
             "pexels-koolshooters-7329629",
             "pexels-koolshooters-7329631",
             "pexels-koolshooters-7329634",
-            "pexels-koolshooters-7329635",
+            "pexels-koolshooters-7329635"
         ]
         //【配列の範囲チェック】
         // ・範囲より下を指している場合、最後の画像を表示
@@ -99,6 +99,10 @@ class ViewController: UIViewController {
         displayImage()
     }
     
+    @IBAction func unwind(_ segue: UIStoryboardSegue){
+        
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -107,9 +111,15 @@ class ViewController: UIViewController {
         // Image Viewに画像を設定
         imageView.image = image
     }
-
-    @IBAction func unwind(_ segue: UIStoryboardSegue){
-        
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toNext" {
+            // segueから遷移先のZoomViewControllerを取得する
+            let zoomViewController:ZoomViewController = segue.destination as! ZoomViewController
+            // 遷移先で宣言している変数に値を代入して渡す
+            zoomViewController.image = self.imageView.image
+            
+        }
     }
 
 }

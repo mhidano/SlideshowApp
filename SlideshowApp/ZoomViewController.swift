@@ -9,12 +9,16 @@ import UIKit
 
 class ZoomViewController: UIViewController {
 
+    @IBOutlet weak var zoomImageView: UIImageView!
+    
+    // 受け取り用変数宣言
+    var image: UIImage? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.zoomImageView.image = self.image
     }
-    
 
     /*
     // MARK: - Navigation
