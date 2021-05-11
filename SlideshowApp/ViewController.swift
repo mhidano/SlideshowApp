@@ -34,6 +34,9 @@ class ViewController: UIViewController {
             //【再生中の処理】
             // 表示している画像のインデックスを1増やす
             dispImageNo += 1
+            // "進む"ボタンと"戻る"ボタンを無効（タップ不可）とする
+            onPreview.isEnabled = false
+            onNext.isEnabled = false
             // タイマーをセットする
             timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(changeDisplayImage), userInfo: nil, repeats: true)
             // ボタンの名前を"停止"に変える
@@ -44,6 +47,9 @@ class ViewController: UIViewController {
             timer.invalidate()
             // タイマーを削除しておく（timer.invalidateだけだとtimerがnilにならないため）
             timer = nil
+            // "進む"ボタンと"戻る"ボタンを有効（タップ可）とする
+            onPreview.isEnabled = true
+            onNext.isEnabled = true
             // ボタンの名前を"再生"に変える
             onSlideShow.setTitle("再生", for: .normal)
         }
