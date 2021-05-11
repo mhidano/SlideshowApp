@@ -41,22 +41,32 @@
                                     <action selector="onNext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gOV-Ue-k7X"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="axM-XH-8XO">
+                                <rect key="frame" x="198.66666666666666" y="311" width="31" height="30"/>
+                                <state key="normal" title="再生"/>
+                                <connections>
+                                    <action selector="onSlideShow:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hAl-jK-YLf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="SeQ-rx-nbM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="75t-rX-RSA"/>
+                            <constraint firstItem="axM-XH-8XO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DjJ-ps-Ell"/>
                             <constraint firstItem="SeQ-rx-nbM" firstAttribute="top" secondItem="qG1-ts-jkT" secondAttribute="top" constant="217" id="ILx-j7-feS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="e4D-OC-OTz" secondAttribute="trailing" constant="30" id="WBW-ZF-dKu"/>
                             <constraint firstItem="qG1-ts-jkT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="YJo-LD-kfw"/>
                             <constraint firstItem="e4D-OC-OTz" firstAttribute="top" secondItem="qG1-ts-jkT" secondAttribute="top" constant="217" id="cN0-17-ky5"/>
                             <constraint firstItem="qG1-ts-jkT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lay-hd-2YS"/>
+                            <constraint firstItem="axM-XH-8XO" firstAttribute="top" secondItem="qG1-ts-jkT" secondAttribute="top" constant="217" id="qaP-Ea-a0c"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="qG1-ts-jkT" id="Fhm-SD-nCC"/>
                         <outlet property="onNext" destination="e4D-OC-OTz" id="yq7-NN-GHV"/>
                         <outlet property="onPreview" destination="SeQ-rx-nbM" id="244-YI-fek"/>
+                        <outlet property="onSlideShow" destination="axM-XH-8XO" id="xH5-MU-ZID"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
