@@ -58,11 +58,11 @@ class ViewController: UIViewController {
     @objc func displayImage() {
         // 画像の名前の配列
         let imageNameArray = [
-            "pexels-koolshooters-7329628",
-            "pexels-koolshooters-7329629",
-            "pexels-koolshooters-7329631",
-            "pexels-koolshooters-7329634",
-            "pexels-koolshooters-7329635"
+            "pexels-koolshooters-7329628.jpg",
+            "pexels-koolshooters-7329629.jpg",
+            "pexels-koolshooters-7329631.jpg",
+            "pexels-koolshooters-7329634.jpg",
+            "pexels-koolshooters-7329635.jpg"
         ]
         //【配列の範囲チェック】
         // ・範囲より下を指している場合、最後の画像を表示
@@ -115,7 +115,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // 本プロジェクトにバンドルした画像ファイルを読み込み
-        let image = UIImage(named: "pexels-koolshooters-7329628")
+        let image = UIImage(named: "pexels-koolshooters-7329628.jpg")
         // Image Viewに画像を設定
         imageView.image = image
     }
