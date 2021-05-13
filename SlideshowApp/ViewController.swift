@@ -43,15 +43,7 @@ class ViewController: UIViewController {
             onSlideShow.setTitle("停止", for: .normal)
         } else {
             //【停止中の処理】
-            // タイマーを停止する
-            timer.invalidate()
-            // タイマーを削除しておく（timer.invalidateだけだとtimerがnilにならないため）
-            timer = nil
-            // "進む"ボタンと"戻る"ボタンを有効（タップ可）とする
-            onPreview.isEnabled = true
-            onNext.isEnabled = true
-            // ボタンの名前を"再生"に変える
-            onSlideShow.setTitle("再生", for: .normal)
+            offSlideShow()
         }
     }
     
@@ -93,14 +85,25 @@ class ViewController: UIViewController {
     
     // スライドショー用の画像更新処理
     @objc func changeDisplayImage() {
-        // 表示している画像のインデックスを1増やす
-        dispImageNo += 1
         // 画像更新
         displayImage()
     }
     
+    // スライドショー停止処理
+    @objc func offSlideShow() {
+        // タイマーを停止する
+        timer.invalidate()
+        // タイマーを削除しておく（timer.invalidateだけだとtimerがnilにならないため）
+        timer = nil
+        // "進む"ボタンと"戻る"ボタンを有効（タップ可）とする
+        onPreview.isEnabled = true
+        onNext.isEnabled = true
+        // ボタンの名前を"再生"に変える
+        onSlideShow.setTitle("再生", for: .normal)
+
+    }
+    
     @IBAction func unwind(_ segue: UIStoryboardSegue){
-        
     }
 
     override func viewDidLoad() {
@@ -114,6 +117,8 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toNext" {
+            // スライドショーを停止する
+            offSlideShow()
             // segueから遷移先のZoomViewControllerを取得する
             let zoomViewController:ZoomViewController = segue.destination as! ZoomViewController
             // 遷移先で宣言している変数に値を代入して渡す
