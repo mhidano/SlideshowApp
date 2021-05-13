@@ -32,8 +32,6 @@ class ViewController: UIViewController {
         // 再生中か停止しているかを判別
         if timer == nil {
             //【再生中の処理】
-            // 表示している画像のインデックスを1増やす
-            dispImageNo += 1
             // "進む"ボタンと"戻る"ボタンを無効（タップ不可）とする
             onPreview.isEnabled = false
             onNext.isEnabled = false
@@ -85,22 +83,29 @@ class ViewController: UIViewController {
     
     // スライドショー用の画像更新処理
     @objc func changeDisplayImage() {
+        // 表示している画像のインデックスを1増やす
+        dispImageNo += 1
         // 画像更新
         displayImage()
     }
     
     // スライドショー停止処理
     @objc func offSlideShow() {
-        // タイマーを停止する
-        timer.invalidate()
-        // タイマーを削除しておく（timer.invalidateだけだとtimerがnilにならないため）
-        timer = nil
-        // "進む"ボタンと"戻る"ボタンを有効（タップ可）とする
-        onPreview.isEnabled = true
-        onNext.isEnabled = true
-        // ボタンの名前を"再生"に変える
-        onSlideShow.setTitle("再生", for: .normal)
+        // 再生中か停止しているかを判別
+        if timer == nil {
+            // 停止中の場合は何もしない
+        } else {
+            // タイマーを停止する
+            timer.invalidate()
+            // タイマーを削除しておく（timer.invalidateだけだとtimerがnilにならないため）
+            timer = nil
+            // "進む"ボタンと"戻る"ボタンを有効（タップ可）とする
+            onPreview.isEnabled = true
+            onNext.isEnabled = true
+            // ボタンの名前を"再生"に変える
+            onSlideShow.setTitle("再生", for: .normal)
 
+        }
     }
     
     @IBAction func unwind(_ segue: UIStoryboardSegue){
